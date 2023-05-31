@@ -1,0 +1,9 @@
+.banner-img {
+  width: 100%;
+}
+
+.app-header {
+  background-image: url("https://www.hmsouthafrica.co.za/images/hoverimg/202301111158419165.jpg");
+  background-size: 100% 100%;
+  height: 23rem;
+}

@@ -1,0 +1,25 @@
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.container {
+  margin: 2.5rem 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-content: space-evenly;
+}
+
+.search-form {
+  text-align: center;
+}
+
+.search-bar {
+  height: 3.8rem;
+  width: 40%;
+  margin-top: 2rem;
+  padding: 0 3rem;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+}
