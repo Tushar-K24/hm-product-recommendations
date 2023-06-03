@@ -38,7 +38,7 @@ const SearchBar = () => {
             imageSrc={productDesc.imageUrl}
             title={productDesc.name}
             url={productDesc.url}
-            // price={productDesc.price}
+            price={productDesc.price}
           />
         ))}
       </div>

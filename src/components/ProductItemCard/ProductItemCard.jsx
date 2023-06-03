@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProductItemCard.css";
 
-const ProductItemCard = ({ imageSrc, title, url }) => {
+const ProductItemCard = ({ imageSrc, title, price, url }) => {
   const handleClick = () => {
     window.location.href = url;
   };
@@ -11,7 +11,7 @@ const ProductItemCard = ({ imageSrc, title, url }) => {
         <img src={imageSrc} alt={title} className="product-item-image" />
         <div className="product-item-desc">
           <div className="product-item-title">{title}</div>
-          {/* <div className="product-item-price">{price}</div> */}
+          <div className="product-item-price">{price}</div>
         </div>
       </div>
     </button>
