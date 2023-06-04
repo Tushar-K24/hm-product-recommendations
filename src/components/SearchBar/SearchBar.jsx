@@ -5,6 +5,7 @@ import ProductItemCard from "../ProductItemCard/ProductItemCard";
 
 const SearchBar = () => {
   const [similarClothes, setSimilarClothes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -21,8 +22,15 @@ const SearchBar = () => {
         limit: 10,
       },
     };
-    const res = await axios.request(config);
-    setSimilarClothes(res.data.similarItems);
+    try {
+      setLoading(true);
+      const res = await axios.request(config);
+      setSimilarClothes(res.data.similarItems);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+    }
   };
 
   return (
@@ -32,15 +40,19 @@ const SearchBar = () => {
       </form>
 
       <div className="container">
-        {similarClothes.map((productDesc) => (
-          <ProductItemCard
-            key={productDesc.id}
-            imageSrc={productDesc.imageUrl}
-            title={productDesc.name}
-            url={productDesc.url}
-            price={productDesc.price}
-          />
-        ))}
+        {loading ? (
+          <h2 className="loading"> Loading... </h2>
+        ) : (
+          similarClothes.map((productDesc) => (
+            <ProductItemCard
+              key={productDesc.id}
+              imageSrc={productDesc.imageUrl}
+              title={productDesc.name}
+              url={productDesc.url}
+              price={productDesc.price}
+            />
+          ))
+        )}
       </div>
     </>
   );

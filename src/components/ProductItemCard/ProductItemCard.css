@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+.loading {
+  font-family: "Open Sans", sans-serif;
+  margin: auto;
+}
+
 .product-item-card {
   width: 18rem;
   height: 27rem;
